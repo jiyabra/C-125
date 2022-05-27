@@ -26,19 +26,20 @@ function modelLoaded() {
     console.log('PoseNet is Initialized!');
 }
 
-function gotPoses(results) {
-    if (results.length > 0) {
-        console.log(results);
-        noseX = results[0].pose.nose.x;
-        noseY = results[0].pose.nose.y;
 
-        console.log = ("noseX = " + noseX + "noseY = " + noseY);
+function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    console.log(results);
+    noseX = results[0].pose.nose.x;
+    noseY = results[0].pose.nose.y;
+    console.log("noseX = " + noseX +" noseY = " + noseY);
 
-        leftwristX = results[0].pose.leftWrist.x;
-        rightwristX = results[0].pose.rightWrist.x;
+    leftWristX = results[0].pose.leftWrist.x;
+    rightWristX = results[0].pose.rightWrist.x;
+    difference = floor(leftWristX - rightWristX);
 
-        difference = floor(leftwristX - rightwristX);
-
-        console.log = ("leftwristx = " + leftwristx + "rightwristx = " + rightwristX + "difference = " + difference);
-    }
+    console.log("leftWristX  = " + leftWristX  + " rightWristX = "+ rightWristX + " difference = " + difference);
+  }
 }
